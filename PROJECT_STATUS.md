@@ -30,9 +30,9 @@
 - Notes: Committed as `1329513`. `maze_small`: cost 50, 50 steps, 1352 expansions, matching the expected results. Start-at-goal, unreachable-cycle, fewest-moves, maximum-depth, and immediate-failure checks passed. Merge into `main` is pending.
 
 ### Q8 — Key Hunt Problem
-- Status: Not started
-- Last update:
-- Notes:
+- Status: Completed and tested on `faizan`
+- Last update: 14 October 2026
+- Notes: State stores position and remaining keys. `keys_tiny` with DFS: cost 66, 66 steps, 67 expansions; all keys collected before finishing at the exit. Independent BFS checks match the reference results: `keys_tiny` cost 26, 26 steps, 490 expansions; `keys_small` cost 54, 54 steps, 1723 expansions. Key collection, goal conditions, terrain costs, and cycle handling passed. Integration with Hadia's BFS and merge into `main` are pending. Q9 remains separate and incomplete.
 
 ---
 
