@@ -22,17 +22,17 @@ The coding work is assigned as follows: Faizan will complete Q1, Q3, Q4, and Q8;
 
 ### Set A — Faizan
 
-- [ ] Q1 — Depth-First Search (DFS)
-- [ ] Q3 — Depth-Limited Search (DLS)
-- [ ] Q4 — Iterative Deepening Search (IDS)
-- [ ] Q8 — Key Hunt Problem / Griever Hole
+- [x] Q1 — Depth-First Search (DFS)
+- [x] Q3 — Depth-Limited Search (DLS)
+- [x] Q4 — Iterative Deepening Search (IDS)
+- [x] Q8 — Key Hunt Problem / Griever Hole
 
 ### Set B — Hadia
 
-- [ ] Q2 — Breadth-First Search (BFS)
-- [ ] Q5 — Uniform-Cost Search (UCS)
-- [ ] Q6 — Greedy Best-First Search + Manhattan/Euclidean Heuristics
-- [ ] Q7 — A* Search
+- [x] Q2 — Breadth-First Search (BFS)
+- [x] Q5 — Uniform-Cost Search (UCS)
+- [x] Q6 — Greedy Best-First Search + Manhattan/Euclidean Heuristics
+- [x] Q7 — A* Search
 
 ### Q9
 
@@ -67,21 +67,21 @@ We will use three branches:
 
 **Assigned Set:** Set A — Q1, Q3, Q4, and Q8; Q9 jointly with Hadia.
 
-- [ ] Assigned questions completed
-- [ ] Individual tests passed
-- [ ] Code pushed to `faizan`
+- [x] Assigned questions completed
+- [x] Individual tests passed
+- [x] Code pushed to `faizan`
 - [ ] Pull request reviewed
-- [ ] Merged into `main`
+- [x] Merged into `main`
 
 ### Hadia
 
 **Assigned Set:** Set B — Q2, Q5, Q6, and Q7; Q9 jointly with Faizan.
 
-- [ ] Assigned questions completed
-- [ ] Individual tests passed
-- [ ] Code pushed to `hadia`
+- [x] Assigned questions completed
+- [x] Individual tests passed
+- [x] Code pushed to `hadia`
 - [ ] Pull request reviewed
-- [ ] Merged into `main`
+- [x] Merged into `main`
 
 ---
 
@@ -109,7 +109,7 @@ Before submission:
 
 - [ ] All required questions are implemented
 - [ ] Q9 is completed
-- [ ] Both branches are merged into `main`
+- [x] Both branches are merged into `main`
 - [ ] Full project is tested from `main`
 - [ ] Expected outputs are checked
 - [ ] Report is completed and exported as `report.pdf`
