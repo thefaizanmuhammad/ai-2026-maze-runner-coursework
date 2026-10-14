@@ -114,6 +114,39 @@ def keyHuntHeuristic(state, problem):
         the true number of steps between two cells, and caches the result
       * util.manhattanDistance(pos1, pos2)
     """
-    position = state[0]
-    "*** YOUR CODE HERE ***"
-    return 0   # the trivial (but consistent!) heuristic
+    position, remainingKeys = state
+    cache = problem.heuristicInfo
+
+    if not remainingKeys:
+        return mazeDistance(problem.exit, position, problem.maze, cache)
+
+    nearestKey = min(mazeDistance(key, position, problem.maze, cache)
+                     for key in remainingKeys)
+    exitDistance = min(mazeDistance(problem.exit, key, problem.maze, cache)
+                       for key in remainingKeys)
+
+    treeKey = ('mst', remainingKeys)
+
+    if treeKey not in cache:
+        connected = {min(remainingKeys)}
+        unconnected = set(remainingKeys) - connected
+        treeCost = 0
+
+        while unconnected:
+            shortest = float('inf')
+            nextKey = min(unconnected)
+
+            for key in connected:
+                for otherKey in unconnected:
+                    distance = mazeDistance(key, otherKey, problem.maze, cache)
+                    if distance < shortest:
+                        shortest = distance
+                        nextKey = otherKey
+
+            treeCost += shortest
+            connected.add(nextKey)
+            unconnected.remove(nextKey)
+
+        cache[treeKey] = treeCost
+
+    return nearestKey + cache[treeKey] + exitDistance

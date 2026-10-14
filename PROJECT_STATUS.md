@@ -64,9 +64,9 @@
 ## Shared — Faizan and Hadia
 
 ### Q9 — Key Hunt Heuristic
-- Status: Not started
-- Last update:
-- Notes:
+- Status: Completed and tested on `faizan`; merge into `main` pending
+- Last update: 14 October 2026
+- Notes: Uses nearest-key distance + a minimum spanning tree over remaining keys + nearest-key-to-exit distance, with cached maze distances and tree costs. With no keys remaining, uses distance to the exit. `keys_medium`: start heuristic 83, optimal cost 94, 94 steps, 446 A* expansions versus 9695 UCS expansions. Consistency passed on all reachable states and transitions of keys_tiny, keys_small, keys_medium, a weighted-terrain test, and a no-key test. Goal heuristic is zero. A* costs matched UCS on all tested key layouts.
 
 ---
 
@@ -97,4 +97,4 @@
 
 ## Important Notes
 
-Q1–Q8 are integrated on `main`. Q9, full final testing, report preparation, and submission remain pending. AI assistance must be disclosed in the report.
+Q1–Q8 are integrated on `main`. Q9 is implemented and tested on `faizan`; its merge and full final testing remain pending, along with report preparation and submission. AI assistance must be disclosed in the report.
