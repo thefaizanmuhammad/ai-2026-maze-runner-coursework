@@ -12,14 +12,9 @@
 
 ---
 
-## Faizan — Q1 to Q5
+## Faizan — Set A: Q1, Q3, Q4, Q8
 
 ### Q1 — DFS
-- Status: Not started
-- Last update:
-- Notes:
-
-### Q2 — BFS
 - Status: Not started
 - Last update:
 - Notes:
@@ -34,14 +29,24 @@
 - Last update:
 - Notes:
 
-### Q5 — UCS
+### Q8 — Key Hunt Problem
 - Status: Not started
 - Last update:
 - Notes:
 
 ---
 
-## Hadia — Q6 to Q9
+## Hadia — Set B: Q2, Q5, Q6, Q7
+
+### Q2 — BFS
+- Status: Not started
+- Last update:
+- Notes:
+
+### Q5 — UCS
+- Status: Not started
+- Last update:
+- Notes:
 
 ### Q6 — Greedy Best-First Search + Heuristics
 - Status: Not started
@@ -53,10 +58,9 @@
 - Last update:
 - Notes:
 
-### Q8 — Key Hunt Problem
-- Status: Not started
-- Last update:
-- Notes:
+---
+
+## Shared — Faizan and Hadia
 
 ### Q9 — Key Hunt Heuristic
 - Status: Not started
