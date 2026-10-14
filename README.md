@@ -18,18 +18,16 @@ The remaining starter files should only be changed if absolutely necessary.
 
 ## Task Division
 
-We will divide the coding work into two sets.
+The coding work is assigned as follows: Faizan will complete Q1, Q3, Q4, and Q8; Hadia will complete Q2, Q5, Q6, and Q7. Both members will work together on Q9.
 
-Either group member can choose either set.
-
-### Set A
+### Set A — Faizan
 
 - [ ] Q1 — Depth-First Search (DFS)
 - [ ] Q3 — Depth-Limited Search (DLS)
 - [ ] Q4 — Iterative Deepening Search (IDS)
 - [ ] Q8 — Key Hunt Problem / Griever Hole
 
-### Set B
+### Set B — Hadia
 
 - [ ] Q2 — Breadth-First Search (BFS)
 - [ ] Q5 — Uniform-Cost Search (UCS)
@@ -40,7 +38,7 @@ Either group member can choose either set.
 
 - [ ] Q9 — Key Hunt Heuristic
 
-Q9 will be handled jointly unless we decide to assign it to one member later.
+Q9 will be handled jointly by Faizan and Hadia.
 
 ---
 
@@ -67,7 +65,7 @@ We will use three branches:
 
 ### Faizan
 
-**Chosen Set:** _To be decided_
+**Assigned Set:** Set A — Q1, Q3, Q4, and Q8; Q9 jointly with Hadia.
 
 - [ ] Assigned questions completed
 - [ ] Individual tests passed
@@ -77,7 +75,7 @@ We will use three branches:
 
 ### Hadia
 
-**Chosen Set:** _To be decided_
+**Assigned Set:** Set B — Q2, Q5, Q6, and Q7; Q9 jointly with Faizan.
 
 - [ ] Assigned questions completed
 - [ ] Individual tests passed
