@@ -67,8 +67,8 @@ We will use three branches:
 
 **Assigned Set:** Set A — Q1, Q3, Q4, and Q8; Q9 jointly with Hadia.
 
-- [ ] Assigned questions completed
-- [ ] Individual tests passed
+- [x] Assigned questions completed
+- [x] Individual tests passed
 - [ ] Code pushed to `faizan`
 - [ ] Pull request reviewed
 - [ ] Merged into `main`
