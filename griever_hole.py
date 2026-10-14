@@ -29,9 +29,6 @@ class KeyHuntProblem(SearchProblem):
 
     Keep the state small: store only what you need to know to decide what
     happens next. Do NOT put the whole maze in the state.
-
-    State: (position, remainingKeys), where remainingKeys is a frozenset of
-    uncollected key positions. Collection order does not affect future moves.
     """
 
     def __init__(self, maze):
@@ -43,16 +40,17 @@ class KeyHuntProblem(SearchProblem):
         # Bookkeeping for the display and the grader. Do not touch.
         self._expanded = 0
         self._expandedOrder = []
+        "*** YOUR CODE HERE (optional: set up anything else you need) ***"
 
     def getStartState(self):
         """Returns the start state, a tuple (startPosition, ...)."""
-        remainingKeys = frozenset(self.keys) - frozenset([self.startPosition])
-        return (self.startPosition, remainingKeys)
+        "*** YOUR CODE HERE ***"
+        util.raiseNotDefined()
 
     def isGoalState(self, state):
         """True when every code piece has been collected AND Thomas is at the exit."""
-        position, remainingKeys = state
-        return position == self.exit and not remainingKeys
+        "*** YOUR CODE HERE ***"
+        util.raiseNotDefined()
 
     def getSuccessors(self, state):
         """
@@ -67,11 +65,8 @@ class KeyHuntProblem(SearchProblem):
         self._expandedOrder.append(state[0])
 
         successors = []
-        position, remainingKeys = state
-        for action, nextPosition in self.maze.neighbors(position):
-            nextKeys = remainingKeys - frozenset([nextPosition])
-            nextState = (nextPosition, nextKeys)
-            successors.append((nextState, action, self.maze.cost(nextPosition)))
+        "*** YOUR CODE HERE ***"
+        util.raiseNotDefined()
         return successors
 
     # --- Provided: you do not need to change anything below -------------

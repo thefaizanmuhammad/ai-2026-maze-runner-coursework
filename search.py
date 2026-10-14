@@ -67,20 +67,8 @@ def depthFirstSearch(problem):
     Hint: a fringe entry can hold more than a state. Storing
     (state, actionsSoFar) is an easy way to remember how you got there.
     """
-    fringe = Stack()
-    fringe.push((problem.getStartState(), []))
-    expanded = set()
-
-    while not fringe.isEmpty():
-        state, actions = fringe.pop()
-        if problem.isGoalState(state):
-            return actions
-        if state in expanded:
-            continue
-        expanded.add(state)
-        for successor, action, stepCost in problem.getSuccessors(state):
-            fringe.push((successor, actions + [action]))
-    return None
+    "*** YOUR CODE HERE ***"
+    util.raiseNotDefined()
 
 
 # ----------------------------------------------------------------------
@@ -113,33 +101,8 @@ def depthLimitedSearch(problem, limit):
     search miss a solution that fits within the limit). Instead, avoid cycles
     by not revisiting a state that is already on the current path.
     """
-    if limit < 0:
-        return None
-    start = problem.getStartState()
-    pathStates = {start}
-    actions = []
-
-    def visit(state, depth):
-        if problem.isGoalState(state):
-            return list(actions)
-        if depth == limit:
-            return CUTOFF
-        cutoff = False
-        for successor, action, stepCost in problem.getSuccessors(state):
-            if successor in pathStates:
-                continue
-            pathStates.add(successor)
-            actions.append(action)
-            result = visit(successor, depth + 1)
-            actions.pop()
-            pathStates.remove(successor)
-            if result is CUTOFF:
-                cutoff = True
-            elif result is not None:
-                return result
-        return CUTOFF if cutoff else None
-
-    return visit(start, 0)
+    "*** YOUR CODE HERE ***"
+    util.raiseNotDefined()
 
 
 # ----------------------------------------------------------------------
@@ -151,11 +114,8 @@ def iterativeDeepeningSearch(problem, maxDepth=10000):
     solution. Return that solution, or None if the problem has no solution
     (or none within maxDepth).
     """
-    for limit in range(maxDepth + 1):
-        result = depthLimitedSearch(problem, limit)
-        if result is not CUTOFF:
-            return result
-    return None
+    "*** YOUR CODE HERE ***"
+    util.raiseNotDefined()
 
 
 # ----------------------------------------------------------------------
