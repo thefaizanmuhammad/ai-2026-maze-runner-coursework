@@ -112,8 +112,8 @@ Before submission:
 - [x] Both branches are merged into `main`
 - [x] Full project is tested from `main`
 - [x] Expected outputs are checked
-- [ ] Report is completed and exported as `report.pdf`
-- [ ] Final submission files are verified
+- [x] Report is completed and exported as `report.pdf`
+- [x] Final submission files are verified
 
 ---
 

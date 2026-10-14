@@ -8,7 +8,7 @@
 - [x] Q1–Q8 implemented, merged, and tested on `main`
 - [x] Q1–Q9 completed
 - [x] Full integration testing (expected IDS timeouts recorded below)
-- [ ] Report completed
+- [x] Report completed
 - [ ] Final submission prepared
 
 ---
@@ -72,13 +72,13 @@
 
 ## Report
 
-- [ ] AI Assistant Used
-- [ ] Results tables
-- [ ] DFS vs BFS
-- [ ] IDS
-- [ ] Costs
-- [ ] Heuristics
-- [ ] Q9 heuristic explanation
+- [x] AI Assistant Used
+- [x] Results tables
+- [x] DFS vs BFS
+- [x] IDS
+- [x] Costs
+- [x] Heuristics
+- [x] Q9 heuristic explanation
 
 ---
 
@@ -97,7 +97,7 @@
 
 ## Important Notes
 
-Q1–Q9 are integrated and tested on `main`. Report preparation and submission remain pending. AI assistance must be disclosed in the report.
+Q1–Q9 are integrated and tested on `main`. The completed four-page report is saved as `report.pdf` in the project root and includes the AI assistance disclosure. The four required submission files are verified; final ZIP packaging and upload remain pending.
 
 
 ## Final Integration Results — 14 October 2026
@@ -143,3 +143,10 @@ Uniform-cost search                        70       64        418     0.002
 Greedy best-first search [manhattan]        130       82         85     0.000
 A* search [manhattan]                      70       64        344     0.002
 ```
+
+## Final Submission Check
+
+- All 20 reference and report-result checks passed.
+- Q9 consistency rechecked on all reachable states in the three supplied key mazes.
+- Instructor support files and maze layouts remain unchanged.
+- Submit only `search.py`, `heuristics.py`, `griever_hole.py`, and `report.pdf`.
