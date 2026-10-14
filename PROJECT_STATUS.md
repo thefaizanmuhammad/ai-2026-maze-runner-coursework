@@ -6,8 +6,8 @@
 - [x] Starter code added
 - [x] Branch structure created
 - [x] Q1–Q8 implemented, merged, and tested on `main`
-- [ ] Q1–Q9 completed
-- [ ] Full integration testing
+- [x] Q1–Q9 completed
+- [x] Full integration testing (expected IDS timeouts recorded below)
 - [ ] Report completed
 - [ ] Final submission prepared
 
@@ -33,7 +33,7 @@
 ### Q8 — Key Hunt Problem
 - Status: Completed, merged, and tested on `main`
 - Last update: 14 October 2026
-- Notes: Key Hunt tested with the integrated BFS: keys_tiny cost 26, 26 steps, 490 expansions; keys_small cost 54, 54 steps, 1723 expansions. All keys collected before finishing at the exit. Q9 remains pending.
+- Notes: Key Hunt tested with the integrated BFS: keys_tiny cost 26, 26 steps, 490 expansions; keys_small cost 54, 54 steps, 1723 expansions. All keys collected before finishing at the exit. Q9 is also integrated and tested.
 
 ---
 
@@ -64,7 +64,7 @@
 ## Shared — Faizan and Hadia
 
 ### Q9 — Key Hunt Heuristic
-- Status: Completed and tested on `faizan`; merge into `main` pending
+- Status: Completed, merged, and tested on `main`
 - Last update: 14 October 2026
 - Notes: Uses nearest-key distance + a minimum spanning tree over remaining keys + nearest-key-to-exit distance, with cached maze distances and tree costs. With no keys remaining, uses distance to the exit. `keys_medium`: start heuristic 83, optimal cost 94, 94 steps, 446 A* expansions versus 9695 UCS expansions. Consistency passed on all reachable states and transitions of keys_tiny, keys_small, keys_medium, a weighted-terrain test, and a no-key test. Goal heuristic is zero. A* costs matched UCS on all tested key layouts.
 
@@ -87,14 +87,59 @@
 - [x] Faizan branch merged into main
 - [x] Hadia branch merged into main
 - [x] Q1–Q8 tested on `main` (16 reference cases plus edge checks)
-- [ ] Q1–Q9 tested
+- [x] Q1–Q9 tested on `main`
 - [x] Q1–Q8 expected results checked
-- [ ] Q9 consistency and performance checked
-- [ ] `--compare` results collected
-- [ ] Final code tested from `main`
+- [x] Q9 consistency and performance checked
+- [x] `--compare` results collected for maze_medium, open_glade, and ivy_maze
+- [x] Final code tested from `main`
 
 ---
 
 ## Important Notes
 
-Q1–Q8 are integrated on `main`. Q9 is implemented and tested on `faizan`; its merge and full final testing remain pending, along with report preparation and submission. AI assistance must be disclosed in the report.
+Q1–Q9 are integrated and tested on `main`. Report preparation and submission remain pending. AI assistance must be disclosed in the report.
+
+
+## Final Integration Results — 14 October 2026
+
+- Tested integrated code at commit `525fae4` on `main`.
+- All 16 assignment reference cases passed exactly, plus graph boundary/cycle/failure checks.
+- 77 additional search runs across all 11 provided mazes passed; A* with Manhattan, Euclidean, and null heuristics matched UCS optimal costs.
+- Q9 consistency checked exhaustively on keys_tiny (496 states, 1088 transitions), keys_small (1728 states, 3784 transitions), and keys_medium (11004 states, 24206 transitions). Goal heuristic was zero.
+- Q9 A*: keys_tiny cost 26, 93 expansions; keys_small cost 54, 149 expansions; keys_medium cost 94, 446 expansions. All costs matched UCS.
+- Instructor support files and maze layouts match the original ZIP byte-for-byte.
+- CLI comparison runs below used a 10-second timeout per algorithm. IDS timed out on open_glade and ivy_maze because path-based search repeatedly explores different routes. These are recorded performance limits, not invalid-path or missing-implementation errors. Time and timeout expansion counts vary by machine.
+
+```text
+Medium maze - with loops  (21x41, problem: maze)
+Algorithm                           Path cost    Steps   Expanded  Time (s)
+---------------------------------------------------------------------------
+Depth-first search                        162      162        233     0.005
+Breadth-first search                       66       66        407     0.002
+Iterative deepening search                 66       66     437730     1.936
+Uniform-cost search                        66       66        407     0.002
+Greedy best-first search [manhattan]         80       80         81     0.000
+A* search [manhattan]                      66       66        209     0.001
+
+
+The Open Glade - lots of room to wander  (15x33, problem: maze)
+Algorithm                           Path cost    Steps   Expanded  Time (s)
+---------------------------------------------------------------------------
+Depth-first search                        234      234        322     0.002
+Breadth-first search                       32       32        344     0.002
+Iterative deepening search                  -        -    2257183    10.000   (timed out after 10.0 seconds)
+Uniform-cost search                        32       32        344     0.002
+Greedy best-first search [manhattan]         36       36         39     0.000
+A* search [manhattan]                      32       32        114     0.001
+
+
+The Ivy Maze - thick ivy (3) and Griever territory (10)  (21x41, problem: maze)
+Algorithm                           Path cost    Steps   Expanded  Time (s)
+---------------------------------------------------------------------------
+Depth-first search                        159       88        422     0.004
+Breadth-first search                       80       60        439     0.003
+Iterative deepening search                  -        -    2417801    10.000   (timed out after 10.0 seconds)
+Uniform-cost search                        70       64        418     0.002
+Greedy best-first search [manhattan]        130       82         85     0.000
+A* search [manhattan]                      70       64        344     0.002
+```

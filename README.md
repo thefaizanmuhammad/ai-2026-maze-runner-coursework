@@ -36,7 +36,7 @@ The coding work is assigned as follows: Faizan will complete Q1, Q3, Q4, and Q8;
 
 ### Q9
 
-- [ ] Q9 — Key Hunt Heuristic
+- [x] Q9 — Key Hunt Heuristic
 
 Q9 will be handled jointly by Faizan and Hadia.
 
@@ -107,11 +107,11 @@ Final report review and proofreading will be done together.
 
 Before submission:
 
-- [ ] All required questions are implemented
-- [ ] Q9 is completed
+- [x] All required questions are implemented
+- [x] Q9 is completed
 - [x] Both branches are merged into `main`
-- [ ] Full project is tested from `main`
-- [ ] Expected outputs are checked
+- [x] Full project is tested from `main`
+- [x] Expected outputs are checked
 - [ ] Report is completed and exported as `report.pdf`
 - [ ] Final submission files are verified
 
