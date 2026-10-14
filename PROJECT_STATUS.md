@@ -15,9 +15,9 @@
 ## Faizan — Set A: Q1, Q3, Q4, Q8
 
 ### Q1 — DFS
-- Status: Not started
-- Last update:
-- Notes:
+- Status: Completed and tested on `faizan`
+- Last update: 14 October 2026
+- Notes: Committed as `e4c0d72`. `maze_small`: cost 50, 50 steps, 82 expansions. `maze_medium`: cost 162, 162 steps, 233 expansions. Both match the expected results. Start-at-goal and unreachable-cycle checks passed. Merge into `main` is pending.
 
 ### Q3 — DLS
 - Status: Not started
