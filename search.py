@@ -91,10 +91,32 @@ def depthFirstSearch(problem):
 # ----------------------------------------------------------------------
 # Q2: Breadth-First Search
 # ----------------------------------------------------------------------
+
 def breadthFirstSearch(problem):
-    """Search the shallowest nodes in the search tree first (graph search)."""
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    """Search the shallowest nodes first using a FIFO queue."""
+
+    frontier = Queue()
+    frontier.push((problem.getStartState(), []))
+
+    expanded = set()
+
+    while not frontier.isEmpty():
+        state, actions = frontier.pop()
+
+        if problem.isGoalState(state):
+            return actions
+
+        if state in expanded:
+            continue
+
+        expanded.add(state)
+
+        for next_state, action, step_cost in problem.getSuccessors(state):
+            if next_state not in expanded:
+                frontier.push((next_state, actions + [action]))
+
+    return None
+
 
 
 # ----------------------------------------------------------------------
@@ -171,34 +193,122 @@ def iterativeDeepeningSearch(problem, maxDepth=10000):
 # ----------------------------------------------------------------------
 # Q5: Uniform-Cost Search
 # ----------------------------------------------------------------------
+
 def uniformCostSearch(problem):
-    """Search the node of least total path cost g(n) first (graph search)."""
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    """Search the node of least total path cost first."""
+
+    frontier = PriorityQueue()
+    frontier.push((problem.getStartState(), [], 0), 0)
+
+    expanded = set()
+
+    while not frontier.isEmpty():
+        state, actions, cost_so_far = frontier.pop()
+
+        if problem.isGoalState(state):
+            return actions
+
+        if state in expanded:
+            continue
+
+        expanded.add(state)
+
+        for next_state, action, step_cost in problem.getSuccessors(state):
+            if next_state not in expanded:
+                new_cost = cost_so_far + step_cost
+                new_actions = actions + [action]
+
+                frontier.push(
+                    (next_state, new_actions, new_cost),
+                    new_cost
+                )
+
+    return None
+
 
 
 # ----------------------------------------------------------------------
 # Q6: Greedy Best-First Search
 # ----------------------------------------------------------------------
+
 def greedyBestFirstSearch(problem, heuristic=nullHeuristic):
-    """
-    Search the node that SEEMS closest to the goal first, i.e. the one with
-    the lowest heuristic(state, problem) value (graph search).
-    """
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    """Expand the state with the lowest heuristic estimate."""
+
+    frontier = PriorityQueue()
+    start_state = problem.getStartState()
+
+    frontier.push(
+        (start_state, []),
+        heuristic(start_state, problem)
+    )
+
+    expanded = set()
+
+    while not frontier.isEmpty():
+        state, actions = frontier.pop()
+
+        if problem.isGoalState(state):
+            return actions
+
+        if state in expanded:
+            continue
+
+        expanded.add(state)
+
+        for next_state, action, step_cost in problem.getSuccessors(state):
+            if next_state not in expanded:
+                new_actions = actions + [action]
+
+                frontier.push(
+                    (next_state, new_actions),
+                    heuristic(next_state, problem)
+                )
+
+    return None
 
 
 # ----------------------------------------------------------------------
 # Q7: A* Search
 # ----------------------------------------------------------------------
+
 def aStarSearch(problem, heuristic=nullHeuristic):
-    """
-    Search the node with the lowest f(n) = g(n) + heuristic(n) first
-    (graph search).
-    """
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    """Search using f(n) = g(n) + h(n)."""
+
+    frontier = PriorityQueue()
+    start_state = problem.getStartState()
+
+    frontier.push(
+        (start_state, [], 0),
+        heuristic(start_state, problem)
+    )
+
+    expanded = set()
+
+    while not frontier.isEmpty():
+        state, actions, cost_so_far = frontier.pop()
+
+        if problem.isGoalState(state):
+            return actions
+
+        if state in expanded:
+            continue
+
+        expanded.add(state)
+
+        for next_state, action, step_cost in problem.getSuccessors(state):
+            if next_state not in expanded:
+                new_cost = cost_so_far + step_cost
+                new_actions = actions + [action]
+
+                priority = new_cost + heuristic(next_state, problem)
+
+                frontier.push(
+                    (next_state, new_actions, new_cost),
+                    priority
+                )
+
+    return None
+
 
 
 # Abbreviations

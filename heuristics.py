@@ -18,18 +18,28 @@ def nullHeuristic(state, problem=None):
     return 0
 
 
+
 def manhattanHeuristic(state, problem):
+
     """
     Q6: the Manhattan distance from 'state' to problem.goal:
         |row1 - row2| + |col1 - col2|
     """
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    row, col = state
+    goal_row, goal_col = problem.goal
+
+    return abs(row - goal_row) + abs(col - goal_col)
 
 
 def euclideanHeuristic(state, problem):
     """
     Q6: the straight-line (Euclidean) distance from 'state' to problem.goal.
     """
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    row, col = state
+    goal_row, goal_col = problem.goal
+
+    return math.sqrt(
+        (row - goal_row)**2 + (col - goal_col)**2
+    )
+
+

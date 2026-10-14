@@ -39,25 +39,45 @@
 ## Hadia — Set B: Q2, Q5, Q6, Q7
 
 ### Q2 — BFS
-- Status: Not started
-- Last update:
-- Notes:
+- **Status:** Completed and tested successfully.
+- **Last update:** Implemented Breadth-First Search using a FIFO queue and an expanded set to prevent repeated state expansion.
+- **Notes:**
+  - Uses graph search and returns the sequence of actions leading to the exit.
+  - Tested successfully on `maze_medium`: path cost 66, 66 steps, 407 nodes expanded.
+  - Tested successfully on `open_glade`: path cost 32, 32 steps, 344 nodes expanded.
+  - Both tests matched the expected assignment results.
 
 ### Q5 — UCS
-- Status: Not started
-- Last update:
-- Notes:
+- **Status:** Completed and tested successfully.
+- **Last update:** Implemented Uniform-Cost Search using a priority queue ordered by cumulative path cost, `g(n)`.
+- **Notes:**
+  - Accounts for different terrain costs to find the minimum-cost route.
+  - Uses an expanded set to avoid expanding the same state more than once.
+  - Tested successfully on `griever_alley`: path cost 42, 28 steps, 50 nodes expanded.
+  - Tested successfully on `ivy_maze`: path cost 70, 64 steps, 418 nodes expanded.
+  - Both tests matched the expected assignment results.
 
 ### Q6 — Greedy Best-First Search + Heuristics
-- Status: Not started
-- Last update:
-- Notes:
+- **Status:** Implemented; final test verification in progress.
+- **Last update:** Implemented Greedy Best-First Search in `search.py` and Manhattan and Euclidean distance heuristics in `heuristics.py`.
+- **Notes:**
+  - Greedy uses a priority queue ordered by heuristic value, `h(n)`.
+  - Manhattan distance calculates the sum of absolute row and column differences.
+  - Euclidean distance calculates straight-line distance to the goal.
+  - Initial testing produced a `Method not implemented` error, which was resolved after updating and saving the correct files.
+  - The algorithm subsequently returned `ESCAPED!`. Final path cost, steps, and expanded-node counts still need to be recorded.
 
 ### Q7 — A*
-- Status: Not started
-- Last update:
-- Notes:
+- **Status:** Implemented; final test verification in progress.
+- **Last update:** Implemented A* Search using a priority queue ordered by `f(n) = g(n) + h(n)`.
+- **Notes:**
+  - Combines actual accumulated path cost with the heuristic estimate.
+  - Uses graph search and an expanded set to prevent repeated expansions.
+  - Supports Manhattan and Euclidean heuristics.
+  - The initial `Method not implemented` error was addressed by updating `search.py`.
+  - Final local testing and confirmation of path cost, steps, and expanded-node counts are pending.
 
+---
 ---
 
 ## Shared — Faizan and Hadia
