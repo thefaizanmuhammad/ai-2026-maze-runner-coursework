@@ -15,19 +15,19 @@
 ## Faizan — Set A: Q1, Q3, Q4, Q8
 
 ### Q1 — DFS
-- Status: Not started
-- Last update:
-- Notes:
+- Status: Completed and tested on `faizan`
+- Last update: 14 October 2026
+- Notes: Committed as `e4c0d72`. `maze_small`: cost 50, 50 steps, 82 expansions. `maze_medium`: cost 162, 162 steps, 233 expansions. Both match the expected results. Start-at-goal and unreachable-cycle checks passed. Merge into `main` is pending.
 
 ### Q3 — DLS
-- Status: Not started
-- Last update:
-- Notes:
+- Status: Completed and tested on `faizan`
+- Last update: 14 October 2026
+- Notes: Committed as `6b624ad`. `maze_small` with limit 60: cost 50, 50 steps, 52 expansions. With limit 30: CUTOFF, 32 expansions. Both match the expected results. Goal-at-depth-limit, unreachable-cycle, and shorter-route checks passed. Merge into `main` is pending.
 
 ### Q4 — IDS
-- Status: Not started
-- Last update:
-- Notes:
+- Status: Completed and tested on `faizan`
+- Last update: 14 October 2026
+- Notes: Committed as `1329513`. `maze_small`: cost 50, 50 steps, 1352 expansions, matching the expected results. Start-at-goal, unreachable-cycle, fewest-moves, maximum-depth, and immediate-failure checks passed. Merge into `main` is pending.
 
 ### Q8 — Key Hunt Problem
 - Status: Not started
